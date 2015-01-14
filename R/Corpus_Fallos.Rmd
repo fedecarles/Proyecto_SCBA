@@ -1,13 +1,13 @@
 ---
-#File-Name:       Corpus_Fallos.R
-#Date:            12.01.2015
-#Author:          Federico Carlés
-#Email:           fedecarles@gmail.com                                      
-#Data:            www.scba.gov.ar
-#Packages Used:   XML, stringr
-#R version        3.1.2 (2014-10-31)
-#System           Linux Mint 17 (Qiana)
-#Encoding         UTF-8
+File-Name:       Corpus_Fallos.R
+Date:            12.01.2015
+Author:          Federico Carlés
+Email:           fedecarles@gmail.com                                      
+Data:            www.scba.gov.ar
+Packages Used:   XML, stringr
+R version        3.1.2 (2014-10-31)
+System           Linux Mint 17 (Qiana)
+Encoding         UTF-8
 ---
 
 ##Corpus de Fallos de la Corte Suprema de Buenos Aires
