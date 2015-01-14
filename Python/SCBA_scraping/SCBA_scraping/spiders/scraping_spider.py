@@ -5,8 +5,10 @@ import scrapy
 from scrapy.contrib.spiders import CrawlSpider
 from scrapy.selector import Selector
 
+import w3lib.encoding
+
 reload(sys)
-sys.setdefaultencoding('utf-8')
+sys.setdefaultencoding('cp1252')
 
 class MySpider(CrawlSpider):
     name = "SCBA"
