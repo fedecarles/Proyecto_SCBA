@@ -4,10 +4,10 @@
 El objetivo del proyecto en construir una base de datos con las decisiones de los jueces de la Corte Suprema de Buenos Aires sobre los casos que implique una decisión sobre la constitucionalidad o inconstitucionalidad de una ley (nacional o provincial) o decreto.
 
 ### 2- Problemas
-* No todos los fallos están digitalizados y/o disponibles en el sitio web de la Corte. ------ Trabajar con lo que hay.
-* Los fallos en la web están embebidos en javascript / JQuery. ------ Selenium / Python
-* Identificar las decisiones de cada magistrado en el texto del fallo. ------ Text Mining
-* Gran cantidad de fallos. ------ Acotar el cirterio de selección.
+* No todos los fallos están digitalizados y/o disponibles en el sitio web de la Corte. --- Trabajar con lo que hay.
+* Los fallos en la web están embebidos en javascript / JQuery. --- Selenium / Python
+* Identificar las decisiones de cada magistrado en el texto del fallo. --- Text Mining
+* Gran cantidad de fallos. --- Acotar el criterio de selección.
 
 ### 3- Tareas Completadas
 1. Scraping de las urls de los fallos completos (Búsqueda = Inconstitucionalidad). Script [Selenium5.py][1].
