@@ -1,58 +1,63 @@
-# -*- coding: utf-8 -*-
+import re
+import csv
+import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import Select
-from selenium.common.exceptions import NoSuchElementException
-from selenium.common.exceptions import NoAlertPresentException
-import unittest, time, re
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
-class Test2(unittest.TestCase):
-    def setUp(self):
-        self.driver = webdriver.Firefox()
-        self.driver.implicitly_wait(30)
-        self.base_url = "http://juba.scba.gov.ar/"
-        self.verificationErrors = []
-        self.accept_next_alert = True
-    
-    def test_2(self):
-        driver = self.driver
-        driver.get(self.base_url + "/Busquedas.aspx")
-        driver.find_element_by_id("lnkTesauro").click()
-        # ERROR: Caught exception [ERROR: Unsupported command [waitForPopUp | Tesauro | 30000]]
-        # ERROR: Caught exception [ERROR: Unsupported command [selectWindow | name=Tesauro | ]]
-        driver.find_element_by_id("txtBuscadorVoz").clear()
-        driver.find_element_by_id("txtBuscadorVoz").send_keys("inconstitucionalidad")
-        driver.find_element_by_id("lnkFiltrar").click()
-        driver.find_element_by_id("lnkAgregarCompuesta").click()
-        # ERROR: Caught exception [ERROR: Unsupported command [selectWindow | null | ]]
-        driver.find_element_by_id("btnRealizarBusqueda").click()
-        driver.find_element_by_link_text("Ver el Texto Completo del Fallo").click()
-    
-    def is_element_present(self, how, what):
-        try: self.driver.find_element(by=how, value=what)
-        except NoSuchElementException, e: return False
-        return True
-    
-    def is_alert_present(self):
-        try: self.driver.switch_to_alert()
-        except NoAlertPresentException, e: return False
-        return True
-    
-    def close_alert_and_get_its_text(self):
-        try:
-            alert = self.driver.switch_to_alert()
-            alert_text = alert.text
-            if self.accept_next_alert:
-                alert.accept()
-            else:
-                alert.dismiss()
-            return alert_text
-        finally: self.accept_next_alert = True
-    
-    def tearDown(self):
-        self.driver.quit()
-        self.assertEqual([], self.verificationErrors)
+def extract_urls(browser):
+    links = browser.find_elements_by_xpath('//*[@id>=1 or @id<=1032]/table/tbody/tr[7]/td/p/a')
+    return [link.get_attribute('href') for link in links]
 
-if __name__ == "__main__":
-    unittest.main()
+def extract_materia(browser):
+    materias = browser.find_elements_by_xpath('//*[@id>=1 or @id<=1032]/table/tbody/tr[2]/td[1]/p')
+    return [materia.text for materia in materias]
+
+def extract_sumID(browser):
+    sumIDs = browser.find_elements_by_xpath('//*[@id>=1 or @id<=1032]/table/tbody/tr[2]/td[2]/p')
+    return [sumID.text for sumID in sumIDs]
+
+def extract_desc(browser):
+    descs = browser.find_elements_by_xpath('//*[@id>=1 or @id<=1032]/table/tbody/tr[3]/td/p')
+    return [desc.text for desc in descs]
+
+def extract_sumario(browser):
+    sumarios = browser.find_elements_by_xpath('//*[@id>=1 or @id<=1032]/table/tbody/tr[4]/td/p')
+    return [sumario.text for sumario in sumarios]
+
+def extract_ley(browser):
+    leyes = browser.find_elements_by_xpath('//*[@id>=1 or @id<=1032]/table/tbody/tr[5]/td')
+    return [ley.text for ley in leyes]
+
+def extract_detalles(browser):
+    detalles = browser.find_elements_by_xpath('//*[@id>=1 or @id<=1032]/table/tbody/tr[7]/td/p')
+    return [detalle.text for detalle in detalles]
+
+#browser = webdriver.Firefox()
+browser = webdriver.PhantomJS("/home/federico/PhantomJS/phantomjs-1.9.8-linux-x86_64/bin/phantomjs")
+browser.get("http://juba.scba.gov.ar/Busquedas.aspx")
+browser.find_element_by_xpath("//*[@id='txtExpresionBusquedaIntegral']").send_keys("VozSimple:Inconstitucionalidad Y VozSimple:Declaracion")
+browser.find_element_by_xpath("//*[@id='btnRealizarBusqueda']").click()
+
+browser.implicitly_wait(3)
+
+# get max pages
+#element = WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.XPATH, "//p[@class='c'][last()]")))
+#print element.text
+#max_pages = int(re.search(r'\d+ de (\d+)', element.text).group(1), re.UNICODE)
+
+urls = []
+# loop over the rest of the pages
+for page in xrange(1, 52 ):
+    print "Page %d" % page
+
+    #element = WebDriverWait(browser, 5).until(EC.presence_of_element_located((By.XPATH, "//*")))
+    browser.find_element_by_xpath("//*[@id='cphMainContent_lnkSiguiente']").click()
+
+    data = extract_urls(browser)
+    urls.append([data])
+
+    print data
+    print "-----"
+

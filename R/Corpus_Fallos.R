@@ -20,17 +20,15 @@ file_name <- gsub(pattern="\\/", replace = "-", x = file_name)
 file_name <- gsub(pattern="\\.doc", replace = "", x = file_name)
 
 text <- list()
-pb <- txtProgressBar(min = 0, max = 100, style = 3)
-for (i in urls){
-        text[i] <- xpathSApply(htmlParse(i), "//*[contains(@class, 'mini')]", xmlValue)
-        setTxtProgressBar(pb, i)
+
+for (i in urls[1:19085]){
+        text13[i] <- xpathSApply(htmlParse(i), "//*[contains(@class, 'mini')]", xmlValue)
 }
-close(pb)
 
-for (x in 1:5)
-        write.table(text[[x]], file=paste(file_name[x],"-",x, "txt", sep="."))
-
+for (x in 1:2000)
+        write.table(text[[x]], file= paste(file_name[x],"-",x, "txt", sep="."))
 
 
+eliminr url[9462] [11452] [13361]
 
 
