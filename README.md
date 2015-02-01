@@ -10,16 +10,15 @@ El objetivo del proyecto en construir una base de datos con las decisiones de lo
 * Gran cantidad de fallos. --- Acotar el criterio de selección.
 
 ### 3- Tareas Completadas
-1. Scraping de las urls de los fallos completos (Búsqueda = Inconstitucionalidad). Script [Selenium5.py][1].
-2. Usar las urls para bajar los textos de los fallos y construir el Corpus para el análisis. Script [Corpus_Fallos.R][2]
+1. Scraping de las urls de los fallos completos (Búsqueda = Inconstitucionalidad). Script [VozSimple-Inconstitucionalidad.py][1].
+2. Usar las urls para bajar los textos de los fallos y construir el Corpus para el análisis. Script [Corpus_Fallos_Inconst.R][2]
+3. Construir base de datos con los detalles de cada fallo.
 
 ### 4- Tareas Pendientes
 1. Text Mining de los fallos:
-  * Identificar la carátula (y las partes) en cada fallo.
-  * Identificar los jueces en cada fallo.
   * Identificar la decisión de cada juez.
   * Identificar la desición final de la Corte.
 2. Armar la base de datos final.
 
-[1]:https://github.com/fedecarles/Proyecto_SCBA/blob/master/Python/selenium5.py
-[2]:https://github.com/fedecarles/Proyecto_SCBA/blob/master/R/Corpus_Fallos.R
+[1]:https://github.com/fedecarles/Proyecto_SCBA/blob/master/Python/VozSimple-Inconstitucionalidad.py
+[2]:https://github.com/fedecarles/Proyecto_SCBA/blob/master/R/Corpus_Fallos_Inconst.R
