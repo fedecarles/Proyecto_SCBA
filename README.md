@@ -7,7 +7,7 @@ El objetivo del proyecto en construir una base de datos la Corte Suprema de Buen
 * No todos los fallos están digitalizados y/o disponibles en el sitio web de la Corte. --- Trabajar con lo que hay (aprox. 2K)
 * Los fallos en la web están en javascript / JQuery. --- Selenium / Python
 * No todas las decisiones son identificables automaticamente.
-* Muchos fallos no explicitan de modo directo a quien favorecen (a favor del actor o del demandado, etc.). Obtener ese dato require un analisis del contenido más complejo que la obtención de las decisiones individuales.
+* Muchos fallos no explicitan de modo directo a quien favorecen (a favor del actor o del demandado, etc.). Obtener ese dato require un análisis del contenido aun más complejo que la obtención de las decisiones individuales.
 
 ### 3- Tareas Completadas
 1. ~~Scraping de las urls de los fallos completos (Búsqueda = Inconstitucionalidad).~~ Script: [urls_fallos.py][1] y [urls_clean.py][2]
