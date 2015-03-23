@@ -10,12 +10,18 @@ El objetivo del proyecto en construir una base de datos la Corte Suprema de Buen
 * Identificar la orientación final de la sentencia (a favor del actor o del demandado, etc.)
 
 ### 3- Tareas Completadas
-1. ~~Scraping de las urls de los fallos completos (Búsqueda = Inconstitucionalidad).~~ Script 
-2. ~~Usar las urls para bajar los textos de los fallos y construir el Corpus de texto.~~ Script
-3. ~~Extraer datos generales de los fallos~~ Data
-4. ~~Extraer las decisiones individuales de los magistrados.~~ Data
+1. ~~Scraping de las urls de los fallos completos (Búsqueda = Inconstitucionalidad).~~ Script: [urls_fallos.py][1] y [urls_clean.py][2]
+2. ~~Usar las urls para bajar los textos de los fallos y construir el Corpus de texto.~~ Script: [scrape_urls.R][3]
+3. ~~Extraer datos generales de los fallos~~ Script: [get_votes][4] Data: [datos_fallos.RData][5]
+4. ~~Extraer las decisiones individuales de los magistrados.~~ Data: [votos.RData][6]
 
 ### 4- Tareas Pendientes
 1. Identificar el resultdos final de la sentencia. ¿A quien favorece?
 2. Armar la base de datos final.
 
+[1]: https://github.com/fedecarles/Proyecto_SCBA/blob/master/scrape%20urls/urls_fallos.py
+[2]: https://github.com/fedecarles/Proyecto_SCBA/blob/master/scrape%20urls/urls_clean.py
+[3]: https://github.com/fedecarles/Proyecto_SCBA/edit/master/r/scrape_urls.R
+[4]: https://github.com/fedecarles/Proyecto_SCBA/blob/master/r/get_votes.R
+[5]: https://github.com/fedecarles/Proyecto_SCBA/blob/master/r/Data/datos_fallos.RData
+[6]: https://github.com/fedecarles/Proyecto_SCBA/blob/master/r/Data/votos.RData
