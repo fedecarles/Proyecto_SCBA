@@ -5,7 +5,7 @@ El objetivo del proyecto en construir una base de datos la Corte Suprema de Buen
 
 ### 2- Problemas
 * No todos los fallos están digitalizados y/o disponibles en el sitio web de la Corte. --- Trabajar con lo que hay (aprox. 2K)
-* Los fallos en la web están embebidos en javascript / JQuery. --- Selenium / Python
+* Los fallos en la web están en javascript / JQuery. --- Selenium / Python
 * Identificar las decisiones de cada magistrado en el texto del fallo. 
 * Identificar la orientación final de la sentencia (a favor del actor o del demandado, etc.)
 
