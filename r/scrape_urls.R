@@ -1,9 +1,9 @@
-# File-Name:       Corpus_Fallos_Inconst.R
-# Date:            Enero 2015
+# File-Name:       scrape_urls.R
+# Date:            Marzo 2015
 # Author:          Federico Carlés
 # Email:           fedecarles@mail.utdt.edu                                      
 # Data:            www.scba.gov.ar
-# Packages Used:   XML, RCurl,  stringr
+# Packages Used:   XML, RCurl,  stringr, tm
 # R version        3.1.2 (2014-10-31)
 # System           Linux Mint 17 (Qiana)
 # Encoding         UTF-8
