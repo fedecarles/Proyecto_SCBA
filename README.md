@@ -5,7 +5,6 @@ El objetivo del proyecto en construir una base de datos la Corte Suprema de Buen
 
 ### 2- Problemas
 * No todos los fallos están digitalizados y/o disponibles en el sitio web de la Corte. --- Trabajar con lo que hay (aprox. 2K)
-* Los fallos en la web están en javascript / JQuery. --- Selenium / Python
 * No todas las decisiones son identificables automaticamente.
 * Muchos fallos no explicitan de modo directo a quien favorecen (a favor del actor o del demandado, etc.). Obtener ese dato require un análisis del contenido aun más complejo que la obtención de las decisiones individuales.
 
